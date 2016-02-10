@@ -88,7 +88,15 @@ LBL c (W8) |Does YFWR8 from the RAM page set to the Flash page set
 LBL d (F/R) |Displays the current set Flash and RAM pages
 LBL e |Go back to showing the program menu
 
-Example: To update sector 1D0 of your HP-41CL, start by XEQ"FLASH". The program asks for the Flash page (enter 1D0) and press R/S. The program is then initialized, showing "810000-0FFF" in the display. You are now ready to transfer the first image into RAM page 810. Fire up PC41 on your PC with the right image to transfer (pc41 -w TIDES.ROM). The PC41 program will tell you to press YIMP first and then ENTER on your PC within a second to transfer the image. Press "E" on your HP-41 (LBL E executes the YIMP) and then ENTER on your PC. The image transfers. You now press "D" to increment the RAM page. It shows "811000-0FFF" indicating it is ready to receive the next page. On your PC, you type "pc41 -w PORTSL.ROM" to transfer the next image. Press "E", then ENTER on your PC, etc.
+Example: To update sector 1D0 of your HP-41CL, start by XEQ"FLASH". The program asks for the Flash page (enter 1D0) and press R/S.
+
+Then the program asks if you want to copy the 8 pages starting from the flash address you just entered to RAM pages 810-817. Press Y for "Yes" and it will ask you to press SST to commence the copying. The reason I stop the program for you to manually press SST is that several of the built-in functions give feedback on progress only if the functions are entered manually. To skip the copying of the 8 flash pages, press N for "No".
+
+The program is then initialized, showing "810000-0FFF" in the display.
+
+You are now ready to transfer the first image into RAM page 810. Fire up PC41 on your PC with the right image to transfer (pc41 -w TIDES.ROM). 
+
+The PC41 program will tell you to press YIMP first and then ENTER on your PC within a second to transfer the image. Press "E" on your HP-41 (LBL E executes the YIMP) and then ENTER on your PC. The image transfers. You now press "D" to increment the RAM page. It shows "811000-0FFF" indicating it is ready to receive the next page. On your PC, you type "pc41 -w PORTSL.ROM" to transfer the next image. Press "E", then ENTER on your PC, etc.
 
 Upon doing a write to Flash (labels "b" or "c"), you can press R/S and the program will commence with checking if the image matches the CRC value of the FLDB database. A "MATCH" or "DIFF" will be displayed. Pressing R/S again will do the CRC check on the next Flash page, etc. You can also press "F" to do a CRC check on the currently set Flash page at any time.
 
