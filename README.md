@@ -67,7 +67,7 @@ LBL e (BU) |Switch to the BACKUP program (see abow)
 
 ### FLASH
 
-This program makes for easier upgrades of Flash pages in you HP-41CL. Dependencies are the YFNF, YFNX, Power-CL and Lib4 modules.
+This program makes for easier upgrades of Flash pages in you HP-41CL. Dependencies are the YFNF, YFNX, Power-CL and Lib4 modules - which means you cannot use the FLASH program to update these modules in the 41CL flash memory..
 
 Upon execution, the program first shows the short form of labels A-E and then a-e as prompts:
 
