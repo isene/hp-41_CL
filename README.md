@@ -5,9 +5,9 @@ These tools help managing your HP-41CL system.
 
 ### BACKUP
 
-This program backs up all you need to various media. Dependencies are the YFNX, Power-CL and Lib4 modules.
+This program backs up all you need to various media. Dependencies are the YFNX, Power-CL, CLILUP and Lib4 modules.
 
-The program relies on PC41 (https://github.com/isene/pc41) for backup to your PC.
+The program "FLASH" relies on PC41 (https://github.com/isene/pc41) for backup to your PC.
 
 Upon execution, the program first shows the short form of labels A-E and then a-e as prompts:
 
@@ -22,13 +22,11 @@ LBL B (X) |Backup eXtended Memory to Flash block 1FD
 LBL C (H) |Backup HEPAX RAM in blocks 828 and 829 to Flash (blocks 1F8 and 1F9 respectively)
 LBL a (M:R) |Backup RAM (block 800) to mass media (like the cassette drive)
 LBL b (M:X) |Backup eXtended Memory to mass media (like the cassette drive)
-LBL c (P:R) |Backup RAM (block 800) to your PC via the PC41 program
-LBL d (P:H) |Backup HEPAX RAM in blocks 828 and 829 to your PC via the PC41 program
+LBL c (P:R) |Backup RAM (block 800) to your PC via HP-IL (PILbox) and the CLILUP module
+LBL d (P:H) |Backup HEPAX RAM in blocks 828 and 829 to your PC via HP-IL (PILbox) and the CLILUP module
 LBL e (RST) |Switch to the RESTORE program (see below)
 
-The program relies on the last 8 Flash block being erased idependently
-(check your HP-41CL manuals to verify that you have the right CL board
-that treats the last 8 pages individually).
+The program relies on the last 8 Flash block being erased idependently (check your HP-41CL manuals to verify that you have the right CL board that treats the last 8 pages individually).
 
 The last 8 Flash blocks will have this setup:
 
@@ -61,13 +59,13 @@ LBL D (H) |Restore HEPAX RAM (blocks 828 and 829) from Flash (blocks 1F8 and 1F9
 LBL E (FIXR) |Restore HEPAX RAM (blocks 828 and 829) from Flash (blocks 1F8 and 1F9) (also 1FC to 81A)
 LBL a (M:R) |Restore RAM (block 800) from mass media (like the cassette drive)
 LBL b (M:X) |Restore eXtended Memory from mass media (like the cassette drive)
-LBL c (P:R) |Restore RAM (block 800) from your PC via the PC41 program
-LBL d (P:H) |Restore HEPAX RAM into blocks 828 and 829 from your PC via the PC41 program
+LBL c (P:R) |Restore RAM (block 800) from your PC via HP-IL (PILbox) and the CLILUP module
+LBL d (P:H) |Restore HEPAX RAM into blocks 828 and 829 from your PC via HP-IL (PILbox) and the CLILUP module
 LBL e (BU) |Switch to the BACKUP program (see abow)
 
 ### FLASH
 
-This program makes for easier upgrades of Flash pages in you HP-41CL. Dependencies are the YFNF, YFNX, Power-CL and Lib4 modules - which means you cannot use the FLASH program to update these modules in the 41CL flash memory..
+This program makes for easier upgrades of Flash pages in you HP-41CL via the built-in serial port. Dependencies are the YFNF, YFNX, Power-CL and Lib4 modules - which means you cannot use the FLASH program to update these modules in the 41CL flash memory..
 
 Upon execution, the program first shows the short form of labels A-E and then a-e as prompts:
 
