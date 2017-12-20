@@ -46,17 +46,16 @@ The program relies on PC41 (https://github.com/isene/pc41) for backup to your PC
 
 Upon execution, the program first shows the short form of labels A-E and then a-e as prompts:
 
-**__M R X H FIXR__**
+**__M RAM H FIXR__**
 
 **__M:R,X P:R,H BU__**
 
 Label (menu)    |Description
 ----------------|-----------
 LBL A (M) |Restore MMU setup (change to reflect your own preferences)
-LBL B (R) |Restore RAM (block 800) from Flash block 1FE and MMU (804) from Flash block 1FF
-LBL C (X) |Restore eXtended Memory from Flash block 1FD 
-LBL D (H) |Restore HEPAX RAM (blocks 828 and 829) from Flash (blocks 1F8 and 1F9) AND plugs them to pages #C and #D
-LBL E (FIXR) |Restore HEPAX RAM (blocks 828 and 829) from Flash (blocks 1F8 and 1F9) (also 1FC to 81A)
+LBL B (RAM) |Restore RAM (block 800) from Flash block 1FE and MMU (804) from Flash block 1FF
+LBL C (H) |Restore HEPAX RAM (blocks 828 and 829) from Flash (blocks 1F8 and 1F9) AND plugs them to pages #C and #D
+LBL D (FIXR) |Restore HEPAX RAM (blocks 828 and 829) from Flash (blocks 1F8 and 1F9) (also 1FC to 81A)
 LBL a (M:R) |Restore RAM (block 800) from mass media (like the cassette drive)
 LBL b (M:X) |Restore eXtended Memory from mass media (like the cassette drive)
 LBL c (P:R) |Restore RAM (block 800) from your PC via HP-IL (PILbox) and the CLILUP module
