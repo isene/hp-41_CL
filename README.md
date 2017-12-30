@@ -98,3 +98,6 @@ The PC41 program will tell you to press YIMP first and then ENTER on your PC wit
 Upon doing a write to Flash (labels "b" or "c"), you can press R/S and the program will commence with checking if the image matches the CRC value of the FLDB database. A "MATCH" or "DIFF" will be displayed. Pressing R/S again will do the CRC check on the next Flash page, etc. You can also press "F" to do a CRC check on the currently set Flash page at any time.
 
 Do continue uploading images after the first block of images, press "A" (INI) to start afresh.
+
+### FCAT
+Lists the content of flash pages according to IMDB from the address entered. Requires the YFNX and OSX3 modules.

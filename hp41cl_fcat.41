@@ -1,0 +1,19 @@
+﻿For the HP-41CL: Lists the content of flash pages according to
+IMDB from the address entered. Requires the YFNX and OSX3 modules.
+
+001◆LBL "FCAT"
+002 10
+003 WSIZE		(from OSX3)
+004 "ADDR"
+005 PMTH		(from OSX3)
+006◆LBL 01
+007 CLA
+008 "-"
+009 ARCLH		(from OSX3)
+010 AVIEW
+011 PIMDB?		(from YFNX)
+012 PROMPT
+013 1
+014 +
+015 GTO 01
+016 END
