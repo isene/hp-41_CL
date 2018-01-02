@@ -1,6 +1,6 @@
 ﻿
 001◆LBL "RESTORE"
-002 "V:0.8"
+002 "V:0.9"
 003◆LBL 00
 004 SF 01
 005 XEQ A
@@ -12,21 +12,21 @@
 011◆LBL e
 012 GTO "BACKUP"
 013◆LBL "MMUYFNZ"
-014 SF 01
-015◆LBL "MMU6"
-016 SF 00
+014 SF 00
+015◆LBL "MMU7"
+016 SF 01
 017◆LBL "MMURST"
 018◆LBL A		(the following hacks are needed because of differring XROM numbers between YFNZ and YFNX)
-019 MMUCLR		(seen as MMUDIS with YFNX)
-020 MMUDIS		(seen as MMUEN with YFNX) 
+019 MMUDIS		(seen as MMUEN with YFNX) 
+020 MMUCLR		(seen as MMUDIS with YFNX)
 021 MMUCLR		(seen as MMUDIS with YFNX)
 022 "YFNX"
-023 FS?C 01
+023 FS?C 00
 024 "YFNZ"
-025 FS? 00
-026 PLUGP		(seen as YFWR with YFNX)
-027 FC?C 00
-028 PLUG1U		(seen as YPEEK with YFNX)
+025 FS? 01
+026 PLUGH		(seen as YFNS? with YFNX)
+027 FC?C 01
+028 PLUG1U		(seen as TURBO? with YFNX)
 029 MMUEN		(seen as MMU? with YFNX)
 030 50
 031 PTURBO
