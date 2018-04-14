@@ -101,3 +101,6 @@ Do continue uploading images after the first block of images, press "A" (INI) to
 
 ### FCAT
 Lists the content of flash pages according to IMDB from the address entered. Requires the YFNX and OSX3 modules.
+
+## License
+This software is released into the Public Domain.
