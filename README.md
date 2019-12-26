@@ -3,64 +3,61 @@
 
 These tools help managing your HP-41CL system.
 
-### BACKUP
+### RESTORE
 
-This program backs up all you need to various media. Dependencies are the YFNX, Power-CL, CLILUP and Lib4 modules.
+This is a set of programs to restore and back up your HP-41CL settings and memory. Dependencies are the YFNX, Power-CL and Lib4 modules.
+
+#### MMURST
+
+Resets the MMU settings. It will first put YFNX into page E and display "YFNX PLUGGED". Pressing R/S will put LIB4 into Page 4, OSX3 into Page C and PWRX into Page D and then display "BASICS DONE". Again pressing R/S will plug ISEN into Page A and ISEM into page B and then HEPAX pages 808 and 809 into Pages 8 and 9 respectively and finally HPX2 into Page 7.
+
+The whole procedure will result in this setup:
+
+Page |Content
+-----|-------
+4    |LIB4
+5    |(time)
+6    |(free)
+7    |HEPAX2 (modified HEPAX module)
+8    |HEPAX RAM1 (from RAM page 808)
+9    |HEPAX RAM2 (from RAM page 809)
+A    |ISEN (ISENE module)
+B    |ISEM (GEIR module)
+C    |OSX3 (AMC OS/X)
+D    |PWRX (Power CL)
+E    |YFNX (41CL Extreme Functions)
+F    |(free)
+
+#### YFNZ7
+
+Puts YFNZ (the standard CL module) into page 7.
+
+#### YFNX7
+
+Puts YFNX (41CL Extreme Functions) into page 7.
+
+#### BACKUP
+
+This program backs up all you need to various media. Dependencies are the YFNX, Power-CL (PWRX), CLILUP and Lib4 modules.
 
 The program "FLASH" relies on PC41 (https://github.com/isene/pc41) for backup to your PC.
 
-Upon execution, the program first shows the short form of labels A-E and then a-e as prompts:
+**BACKUP** stores RAM (page 800) into page 801. It then asks if you would like to also backup RAM and HEPAX pages to flash ("RAM+HEP>FL?"). Pressing R/S erases block 3F0000 and writes page 801 to Flash page 3F1 and HEPAX pages 808 and 809 to 3F2 and 3F3 respectively.
 
-**__R X H__**
+The program relies on the 3F0 Flash block being erased (check your HP-41CL manuals to verify that you have the right CL board for this block and change the appropriate program lines if needed).
 
-**__M:R,X P:R,H RST__**
-
-Label (menu)    |Description
-----------------|-----------
-LBL A (R) |Backup RAM (block 800) to Flash block 1FE and MMU (804) to Flash block 1FF
-LBL B (X) |Backup eXtended Memory to Flash block 1FD
-LBL C (H) |Backup HEPAX RAM in blocks 828 and 829 to Flash (blocks 1F8 and 1F9 respectively)
-LBL a (M:R) |Backup RAM (block 800) to mass media (like the cassette drive)
-LBL b (M:X) |Backup eXtended Memory to mass media (like the cassette drive)
-LBL c (P:R) |Backup RAM (block 800) to your PC via HP-IL (PILbox) and the CLILUP module
-LBL d (P:H) |Backup HEPAX RAM in blocks 828 and 829 to your PC via HP-IL (PILbox) and the CLILUP module
-LBL e (RST) |Switch to the RESTORE program (see below)
-
-The program relies on the last 8 Flash block being erased idependently (check your HP-41CL manuals to verify that you have the right CL board that treats the last 8 pages individually).
-
-The last 8 Flash blocks will have this setup:
+Backup to Flash uses these pages in the 3F0 Flash block:
 
 Flash block |Content
 ------------|-------
-1F8 |HEPAX1
-1F9 |HEPAX2
-1FD |XM
-1FE |RAM
-1FF |MMU
+3F1         |RAM
+3F2         |HEPAX1
+3F3         |HEPAX2
 
-### RESTORE
+####NOV-CL
 
-This program is the counterpart to the above BACKUP program. Dependencies are the YFNX, Power-CL and Lib4 modules.
+This program takes pages 8 and 9 from a physically plugged in NoV module and backs them up to RAM pages 808 and 809. You can then use the BACKUP program to also back up these RAM pages to Flash.
 
-The program relies on PC41 (https://github.com/isene/pc41) for backup to your PC.
-
-Upon execution, the program first shows the short form of labels A-E and then a-e as prompts:
-
-**__M RAM H FIXR__**
-
-**__M:R,X P:R,H BU__**
-
-Label (menu)    |Description
-----------------|-----------
-LBL A (M) |Restore MMU setup (change to reflect your own preferences)
-LBL B (RAM) |Restore RAM (block 800) from Flash block 1FE and MMU (804) from Flash block 1FF
-LBL C (H) |Restore HEPAX RAM (blocks 828 and 829) from Flash (blocks 1F8 and 1F9) AND plugs them to pages #C and #D
-LBL D (FIXR) |Restore HEPAX RAM (blocks 828 and 829) from Flash (blocks 1F8 and 1F9) (also 1FC to 81A)
-LBL a (M:R) |Restore RAM (block 800) from mass media (like the cassette drive)
-LBL b (M:X) |Restore eXtended Memory from mass media (like the cassette drive)
-LBL c (P:R) |Restore RAM (block 800) from your PC via HP-IL (PILbox) and the CLILUP module
-LBL d (P:H) |Restore HEPAX RAM into blocks 828 and 829 from your PC via HP-IL (PILbox) and the CLILUP module
-LBL e (BU) |Switch to the BACKUP program (see abow)
 
 ### FLASH
 
@@ -99,8 +96,10 @@ Upon doing a write to Flash (labels "b" or "c"), you can press R/S and the progr
 
 Do continue uploading images after the first block of images, press "A" (INI) to start afresh.
 
+
 ### FCAT
 Lists the content of flash pages according to IMDB from the address entered. Requires the YFNX and OSX3 modules.
+
 
 ## License
 This software is released into the Public Domain.
