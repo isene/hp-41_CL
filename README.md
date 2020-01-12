@@ -54,7 +54,12 @@ Flash block |Content
 3F2         |HEPAX1
 3F3         |HEPAX2
 
-####NOV-CL
+####CL>NOV
+
+This program takes iRAM pages 808 and 809 (HEPAX RAM) and copies them to pages 8 and 9 in the NOV module plugged. It first "cleans" the MMU and puts YFNZ in page #7 and tells you so. Press R/S and it will tell you to turn off the calculator and plug in your NoV module. Do that and press R/S and the program will commence to copy the pages (and tell you the progress as it does it). It will then tell you to turn off the calculator and unplug the module. And finally, after pressing R/S it will go straight to restoring your normal MMU (by going to MMURST).
+
+
+####NOV>CL
 
 This program takes pages 8 and 9 from a physically plugged in NoV module and backs them up to RAM pages 808 and 809. You can then use the BACKUP program to also back up these RAM pages to Flash.
 
