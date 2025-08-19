@@ -1,11 +1,11 @@
-<img src="img/hp41cl_logo.svg" align="left" width="150" height="150" alt="HP-41CL Logo">
-
 # hp-41_CL
 
 [![HP-41](https://img.shields.io/badge/HP--41-Calculator-orange)](https://en.wikipedia.org/wiki/HP-41C)
 [![License](https://img.shields.io/badge/License-Public%20Domain-brightgreen.svg)](https://unlicense.org/)
 [![GitHub stars](https://img.shields.io/github/stars/isene/hp-41_CL.svg)](https://github.com/isene/hp-41_CL/stargazers)
 [![Stay Amazing](https://img.shields.io/badge/Stay-Amazing-blue.svg)](https://isene.org)
+
+<img src="img/hp41cl_logo.svg" align="left" width="150" height="150" alt="HP-41CL Logo">
 
 ## Tools for the HP-41CL by Systemyde (http://www.systemyde.com/hp41/index.html)
 
