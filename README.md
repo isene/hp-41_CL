@@ -6,6 +6,7 @@
 [![Stay Amazing](https://img.shields.io/badge/Stay-Amazing-blue.svg)](https://isene.org)
 
 <img src="img/hp41cl_logo.svg" align="left" width="150" height="150" alt="HP-41CL Logo">
+<br clear="left"/>
 
 ## Tools for the HP-41CL by Systemyde (http://www.systemyde.com/hp41/index.html)
 
